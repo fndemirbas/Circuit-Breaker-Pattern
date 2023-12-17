@@ -16,11 +16,11 @@ public class DataSetup {
     @PostConstruct
     public void setupData() {
         instructorRepository.saveAll(Arrays.asList(
-                Instructor.builder().instructorId(1).firstName("Fatma Nur").lastName("Demirbas").email("fnd@cs.edu.tr")
+                Instructor.builder().instructorId(1).firstName("Ali").lastName("Seydi").email("as@cs.edu.tr")
                         .build(),
-                Instructor.builder().instructorId(2).firstName("Nisa").lastName("Demirbas").email("hnd@cs.edu.tr")
+                Instructor.builder().instructorId(2).firstName("Nazlı").lastName("İkizler").email("ni@cs.edu.tr")
                         .build(),
-                Instructor.builder().instructorId(3).firstName("Emin").lastName("Demirbas").email("med@cs.edu.tr")
+                Instructor.builder().instructorId(3).firstName("Burak").lastName("Can").email("bc@cs.edu.tr")
                         .build()));
     }
 }

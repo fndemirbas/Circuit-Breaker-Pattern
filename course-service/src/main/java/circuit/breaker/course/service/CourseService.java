@@ -24,7 +24,7 @@ public class CourseService{
     @Autowired
     private ObjectMapper objectMapper;
 
-    private static final String SERVICE_NAME = "order-service";
+    private static final String SERVICE_NAME = "course-service";
     private static final String INSTRUCTOR_SERVICE_URL = "http://localhost:9090/instructors/";
 
     @CircuitBreaker(name = SERVICE_NAME, fallbackMethod = "fallbackMethod")

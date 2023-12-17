@@ -1,10 +1,10 @@
-package circuit.breaker.course;
+package circuit.breaker.instructor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrderServiceApplicationTests {
+class InstructorServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
