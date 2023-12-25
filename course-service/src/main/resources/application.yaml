@@ -15,6 +15,10 @@ spring:
   h2:
     console:
       enabled: true
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
 management:
   endpoint:
     health:
@@ -26,15 +30,16 @@ management:
   health:
     circuitbreakers:
       enabled: true
+
 resilience4j:
   circuitbreaker:
     instances:
       course-service:
-        sliding-window-type: COUNT_BASED
+        sliding-window-type: COUNT_BASED # zaman tabanlı (TIME_BASED) veya istek sayısı tabanlı (COUNT_BASED) olabilir
         failure-rate-threshold: 50
         minimum-number-of-calls: 5
         automatic-transition-from-open-to-half-open-enabled: true
         wait-duration-in-open-state: 5s
         permitted-number-of-calls-in-half-open-state: 3
         sliding-window-size: 10
-        register-health-indicator: true
+        register-health-indicator: true # /health endpoint’inde ayrıntılı bilgi görmek için /true olarak tanımlandı

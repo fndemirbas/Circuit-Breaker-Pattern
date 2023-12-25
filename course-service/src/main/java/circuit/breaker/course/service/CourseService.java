@@ -28,8 +28,8 @@ public class CourseService{
     private static final String INSTRUCTOR_SERVICE_URL = "http://localhost:9090/instructors/";
 
     @CircuitBreaker(name = SERVICE_NAME, fallbackMethod = "fallbackMethod")
-    public Type getCourseByCourseCode(String courseCode) {
-        Course course = courseRepository.findByCourseCode(courseCode).orElseThrow(() -> new RuntimeException("Course Not Found: " + courseCode));
+    public Type getCourseInfo(String courseCode) {
+        Course course = courseRepository.findByCourseCode(courseCode);
         CourseInfoResponse courseInfoResponse = objectMapper.convertValue(course, CourseInfoResponse.class);
         Optional<ResponseEntity<Object>> response = genericRestClient.get((INSTRUCTOR_SERVICE_URL + course.getCourseId()), getHttpHeaders());
         if (response.isPresent()) {

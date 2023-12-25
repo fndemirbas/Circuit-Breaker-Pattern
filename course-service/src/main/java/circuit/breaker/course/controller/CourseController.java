@@ -15,6 +15,6 @@ public class CourseController {
     private CourseService courseService;
     @GetMapping
     public Type getCourseInfo(@RequestParam("courseCode") String courseCode) {
-        return courseService.getCourseByCourseCode(courseCode);
+        return courseService.getCourseInfo(courseCode);
     }
 }

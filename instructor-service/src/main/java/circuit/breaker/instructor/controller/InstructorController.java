@@ -15,6 +15,6 @@ public class InstructorController {
     private InstructorService instructorService;
     @GetMapping("/{instructorId}")
     public Instructor getInstructorByInstructorId(@PathVariable("instructorId") Integer instructorId) {
-        return instructorService.getInstructorByInstructorId(instructorId);
+        return instructorService.getInstructorInfo(instructorId);
     }
 }
